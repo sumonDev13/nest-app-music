@@ -8,6 +8,15 @@ GET http://localhost:3000/songs/1
 ###create a new song
 
 POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+    "title":"Bhojhe na se Bojhe na",
+    "artists":["arijit"],
+    "releasedDate":"2015-06-06",
+    "duration":"05:34"
+
+}
 
 ###update a single song
 
