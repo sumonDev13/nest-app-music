@@ -1,6 +1,6 @@
 import { CreateSongDTO } from './dto/create-song-dto';
 import { SongsService } from './songs.service';
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Post, Put} from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, ParseIntPipe, Post, Put} from '@nestjs/common';
 
 @Controller('songs')
 export class SongsController {
@@ -21,8 +21,10 @@ export class SongsController {
     
   }
   @Get(':id')
-  findOne() {
-    return 'find one song';
+  findOne(
+    @Param('id',new ParseIntPipe({errorHttpStatusCode:HttpStatus.NOT_ACCEPTABLE})) id:number
+  ) {
+    return `fetch songs based on id: ${typeof id}`;
   }
   @Put(':id')
   update() {
