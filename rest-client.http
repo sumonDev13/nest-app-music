@@ -12,7 +12,10 @@ Content-Type: application/json
 
 {
     "title":"Bhojhe na se Bojhe na",
-    "artists":["arijit"],
+    "artists":["arijit",
+    "Shreya",
+    "Jubin"
+    ],
     "releasedDate":"2015-06-06",
     "duration":"05:34"
 
